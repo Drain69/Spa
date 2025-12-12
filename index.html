@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Spa - Gestión Principal</title>
+    <link rel="stylesheet" href="estilos\diseño1.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">🐾 PetSpa Pro</div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showMod('reg')">Registro</a></li>
+            <li><a href="#" onclick="showMod('age')">Agenda</a></li>
+            <li><a href="#" onclick="showMod('car')">Carrito</a></li>
+        </ul>
+        <div id="auth-zone">
+            <a href="paginas/iniciar.html" class="btn-login">Iniciar Sesión</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <section id="reg" class="module">
+            <h2>📝 Registro de Dueño y Mascota</h2>
+            <form id="form-registro-completo" onsubmit="handleRegistro(event)">
+                <div class="grid-layout">
+                    <div class="form-group">
+                        <h3>Datos del Dueño (RF-R01)</h3>
+                        <input type="text" id="d-nombre" placeholder="Nombre Dueño" required>
+                        <input type="tel" id="d-tel" placeholder="Teléfono" required>
+                        <input type="email" id="d-correo" placeholder="Correo" required>
+                    </div>
+                    <div class="form-group">
+                        <h3>Datos de la Mascota (RF-R02)</h3>
+                        <input type="text" id="m-nombre" placeholder="Nombre Mascota" required>
+                        <input type="text" id="m-especie" placeholder="Especie" required>
+                        <input type="text" id="m-raza" placeholder="Raza" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-main">Guardar Registro Completo</button>
+            </form>
+            
+            <div class="table-container">
+                <table border="1" id="tabla-datos">
+                    <thead>
+                        <tr>
+                            <th>Dueño</th>
+                            <th>Mascota</th>
+                            <th>Especie</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-tabla"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="age" class="module hidden">
+            <h2>📅 Agenda de Servicios</h2>
+            <form onsubmit="handleAgenda(event)">
+                <input type="date" id="a-fecha" required>
+                <input type="time" id="a-hora" required>
+                <input type="text" id="a-mascota" placeholder="Nombre de la Mascota" required>
+                <select id="a-servicio">
+                    <option value="Baño">Baño</option>
+                    <option value="Corte">Corte</option>
+                    <option value="Spa">Spa Completo</option>
+                </select>
+                <button type="submit" class="btn-main">Agendar Cita</button>
+            </form>
+        </section>
+
+        <section id="car" class="module hidden">
+            <h2>🛒 Tienda de Productos</h2>
+            <div id="catalog" class="product-grid"></div>
+            <div class="cart-box">
+                <h3>Resumen de Compra</h3>
+                <div id="cart-items"></div>
+                <hr>
+                <h3>Total: $<span id="total">0</span></h3>
+                <button class="btn-main" onclick="validarCompra()">Finalizar Compra</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script\main.js"></script>
+</body>
+</html>

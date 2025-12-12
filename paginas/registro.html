@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Mascotas - Pet Spa</title>
+    <link rel="stylesheet" href="../estilos/diseñoregistro.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">🐾 PetSpa Pro</div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="registro.html" class="active">Registro</a></li>
+            <li><a href="agenda.html">Agenda</a></li>
+            <li><a href="carrito.html">Tienda</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>📝 Gestión de Registros</h1>
+        
+        <div class="forms-container">
+            <form id="form-dueño" class="reg-card">
+                <h3>Datos del Dueño (RF-R01)</h3>
+                <input type="text" id="d-nombre" placeholder="Nombre completo" required>
+                <input type="tel" id="d-telefono" placeholder="Teléfono" required>
+                <input type="email" id="d-correo" placeholder="Correo electrónico" required>
+            </form>
+
+            <form id="form-mascota" class="reg-card">
+                <h3>Datos de la Mascota (RF-R02)</h3>
+                <input type="text" id="m-nombre" placeholder="Nombre de la mascota" required>
+                <input type="text" id="m-especie" placeholder="Especie (Perro, Gato, etc.)" required>
+                <input type="text" id="m-raza" placeholder="Raza" required>
+            </form>
+        </div>
+
+        <div class="btn-section">
+            <button type="button" onclick="guardarRegistroCompleto()" class="btn-save">Finalizar Registro Combinado</button>
+        </div>
+
+        <hr>
+
+        <div class="table-container">
+            <h3>Mascotas Registradas</h3>
+            <table id="tabla-registros">
+                <thead>
+                    <tr>
+                        <th>Dueño</th>
+                        <th>Teléfono</th>
+                        <th>Mascota</th>
+                        <th>Especie/Raza</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-mascotas">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../script/registroscript.js"></script>
+</body>
+</html>

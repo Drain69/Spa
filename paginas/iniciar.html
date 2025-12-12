@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso - Pet Spa</title>
+    <link rel="stylesheet" href="../estilos/diseñoiniciio.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <h1 id="login-title">🐾 Acceso Spa</h1>
+            
+            <form id="login-form">
+                <div id="login-inputs">
+                    <div class="input-group">
+                        <input type="text" id="user" placeholder="Usuario (admin)" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="pass" placeholder="Contraseña (Admin123*)" required>
+                        <span id="togglePassword" class="eye-icon">👁️</span>
+                    </div>
+                    <p id="error-msg" class="error-text hidden"></p>
+                    <button type="submit" id="btn-entrar">Ingresar</button>
+                </div>
+            </form>
+
+            <div id="success-msg" class="hidden">
+                <div class="success-icon">✔️</div>
+                <h2>¡Inicio de sesión correcto!</h2>
+                <p>Has ingresado exitosamente al sistema.</p>
+                <a href="../index.html" class="btn-primary">Ir a la Página Principal</a>
+            </div>
+
+            <div class="footer">
+                <a href="../index.html" class="link-back">Volver al inicio</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script/inicioscript.js"></script>
+</body>
+</html>
